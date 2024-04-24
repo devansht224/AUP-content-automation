@@ -11,12 +11,6 @@ async function generateChatCompletion(prompt) {
       model: "gpt-3.5-turbo",
       messages: [
         {
-          role: "system",
-          content: `You are a wildlife author, please ensure a conversational tone throughout the content. Stray away from repetitive or formulaic language, infusing personal anecdotes or experiences (curated from the web specifically for me) to add a touch of relatability.
-          Opt for straightforward and uncomplicated English, catering to users with moderate language proficiency. Prioritise the use of the most relevant keywords, focusing on high-volume, informational, and commercial terms.
-          Highlight primary keywords with 2-3 words, incorporate secondary long-tail keywords, and introduce latent semantic indexing (LSI) keywords for enhanced content richness.`,
-        },
-        {
           role: "user",
           content: prompt,
         },

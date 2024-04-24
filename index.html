@@ -8,6 +8,7 @@
   <body>
     <input type="text" id="userInput" placeholder="Type something..." />
     <button id="submitButton">Submit</button>
+    <div id="final">Loading...</div>
 
     <script>
       document
@@ -28,8 +29,37 @@
             body: JSON.stringify(postData),
           });
 
-          const ans = await data.json();
-          console.log(ans);
+          async function pollServer() {
+            await fetch("http://localhost:3000/check_done")
+              .then((response) => response.json())
+              .then(async (data) => {
+                // Process data
+                console.log(data);
+                // Repeat the polling process
+                if (!data.done) {
+                  setTimeout(() => {
+                    pollServer();
+                  }, 60000);
+                } else {
+                  const data = await fetch(`http://localhost:3000/get`, {
+                    method: "GET",
+                    headers: {
+                      Accept: "application/json",
+                      "Content-Type": "application/json",
+                    },
+                  });
+                  const xx = await data.json();
+                  console.log(xx);
+                  document.getElementById("final").innerHTML = xx.data;
+                  return;
+                }
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+                // Handle errors
+              });
+          }
+          await pollServer();
         });
     </script>
   </body>
