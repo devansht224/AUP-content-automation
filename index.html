@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input Box with Button Example</title>
+  </head>
+  <body>
+    <input type="text" id="userInput" placeholder="Type something..." />
+    <button id="submitButton">Submit</button>
+
+    <script>
+      document
+        .getElementById("submitButton")
+        .addEventListener("click", async function () {
+          const userInput = document.getElementById("userInput").value;
+          console.log("User input:", userInput);
+          const postData = {
+            data: userInput,
+          };
+
+          const data = await fetch(`http://localhost:3000/x`, {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(postData),
+          });
+
+          const ans = await data.json();
+          console.log(ans);
+        });
+    </script>
+  </body>
+</html>

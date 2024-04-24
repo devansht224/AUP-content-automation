@@ -13,9 +13,5 @@ Under these headings each heading represents a factor, table of contents, or poi
 
 Ensure that each point is enriched with 7-10 distinctive details, encompassing facts, information, data points, scientific discoveries, statistics, and other relevant insights.
 
-Please make sure of these points
-Ensure a conversational tone throughout the content. Stray away from repetitive or formulaic language, infusing personal anecdotes or experiences (curated from the web specifically for me) to add a touch of relatability.
-Opt for straightforward and uncomplicated English, catering to users with moderate language proficiency. Prioritise the use of the most relevant keywords, focusing on high-volume, informational, and commercial terms.
-Highlight primary keywords with 2-3 words, incorporate secondary long-tail keywords, and introduce latent semantic indexing (LSI) keywords for enhanced content richness.
 
-Here X = Bandhavgarh National Park
+Here X =
